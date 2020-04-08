@@ -1,0 +1,434 @@
+/* 
+ *--- Styles for Calendar
+ *--- Designed by Rahul Dey
+ *--- January 2020
+ */
+
+/* Fonts */
+
+@import url('https://fonts.googleapis.com/css?family=Monda&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Tajawal:500&display=swap'); 
+
+
+a {
+    text-decoration: none;
+}
+.calendar {
+    width: 375px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    background-color: #fff;
+    box-shadow: 8px 5px 20px #444;
+}
+.cal-container {
+    display: grid;
+    grid-template-columns: repeat(7, 50px);    /* 7 columns in a row with columns width 50px each */
+    padding: 25px 10px;
+    font-family: 'Monda', sans-serif;
+    font-size: 13px;
+}
+.cal-h-container {
+    display: grid;
+    grid-template-columns: 70px auto 70px;
+    font-family: 'Tajawal', sans-serif;
+    font-size: 20px;
+}
+.month, .prev, .next {
+    text-align: center;
+    padding: 20px;
+}
+.day, .date, .holiday, .sunday {
+    padding-top: 9px;
+    padding-bottom: 9px;
+    text-align: center;
+    border-radius: 5px;
+    position: relative;
+}
+.holiday, .sunday {
+    color: #f00;
+}
+.day, .sunday {
+    font-weight: 600;
+}
+.tooltip {
+    width: 120px;
+    visibility: hidden;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    opacity: 0;
+    transition: opacity 1s;
+    text-align: center;
+    margin-left: -60px;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: #eee;
+    color: #000;
+    font-size: 11px;
+    box-shadow: 4px 2px 5px #444;
+}
+.tooltip::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left:  -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #eee transparent;
+}
+.holiday:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+}
+
+/*  January  */
+
+.jan {
+    background-color: #a1d6e2;
+}
+.jan .cal-h-container {
+    background-color: #1995ad;
+    color: #f1f1f2;
+}
+.jan a:link, .jan a:active, .jan a:visited {
+    color: #f1f1f2;
+}
+.jan a:hover {
+    background-color: #188194;
+}
+.jan .date:hover {
+    background-color: #1995ad;
+    color: #f1f1f2;
+}
+.jan .holiday:hover {
+    background-color: #1995ad;
+}
+.jan .day {
+    color: #1995ad;
+}
+.jan .date {
+    color: #1995ad;
+}
+
+/*  February  */
+
+.feb {
+    background-color: #db9501;
+}
+.feb .cal-h-container {
+    background-color: #6e6702;
+    color: #db9501;
+}
+.feb a:link, .feb a:active, .feb a:visited {
+    color: #db9501;
+}
+.feb a:hover {
+    background-color: #595305;
+}
+.feb .date:hover {
+    background-color: #6e6702;
+    color: #db9501;
+}
+.feb .holiday:hover {
+    background-color: #6e6702;
+}
+.feb .day {
+    color: #2e2300;
+}
+.feb .date {
+    color: #c05805;
+}
+
+/*  March  */
+
+.mar {
+    background-color: #9a9eab;
+}
+.mar .cal-h-container {
+    background-color: #5d535e;
+    color: #ec96a4;
+}
+.mar a:link, .mar a:active, .mar a:visited {
+    color: #ec96a4;
+}
+.mar a:hover {
+    background-color: #3d373d;
+}
+.mar .date:hover {
+    background-color: #5d535e;
+    color: #ec96a4;
+}
+.mar .holiday:hover {
+    background-color: #5d535e;
+}
+.mar .day {
+    color: #5d535e;;
+}
+.mar .date {
+    color: #5d535e;
+}
+
+/*  April  */
+
+.apr {
+    background-color: #598234;
+}
+.apr .cal-h-container {
+    background-color: #aebd38;
+    color: #505160;
+}
+.apr a:link, .apr a:active, .apr a:visited {
+    color: #505160;
+}
+.apr a:hover {
+    background-color: #9fad32;
+}
+.apr .date:hover {
+    background-color: #aebd38;
+    color: #505160;
+}
+.apr .holiday:hover {
+    background-color: #aebd38;
+}
+.apr .day {
+    color: #68829e;
+}
+.apr .date {
+    color: #598234;
+}
+
+/*  May  */
+
+.may {
+    background-color: #fb6542;
+}
+.may .cal-h-container {
+    background-color: #375e97;
+    color: #ffbb00;
+}
+.may a:link, .may a:active, .may a:visited {
+    color: #ffbb00;
+}
+.may a:hover {
+    background-color: #2e4e7d;
+}
+.may .date:hover {
+    background-color: #375e97;
+    color: #ffbb00;
+}
+.may .holiday:hover {
+    background-color: #375e97;
+}
+.may .day {
+    color: #3f681c;
+}
+.may .date {
+    color: #375e97;
+}
+
+/*  June  */
+
+.jun {
+    background-color: #693d3d;
+}
+.jun .cal-h-container {
+    background-color: #46211a;
+    color: #ba5536;
+}
+.jun a:link, .jun a:active, .jun a:visited {
+    color: #ba5536;
+}
+.jun a:hover {
+    background-color: #331813;
+}
+.jun .date:hover {
+    background-color: #46211a;
+    color: #ba5536;
+}
+.jun .holiday:hover {
+    background-color: #46211a;
+}
+.jun .day {
+    color: #46211a;
+}
+.jun .date {
+    color: #a43820;
+}
+
+/*  July  */
+
+.jul {
+    background-color: #fef2e4;
+}
+.jul .cal-h-container {
+    background-color: #c60000;
+    color: #fef2e4;
+}
+.jul a:link, .jul a:active, .jul a:visited {
+    color: #fef2e4;
+}
+.jul a:hover {
+    background-color: #9e0303;
+}
+.jul .date:hover {
+    background-color: #c60000;
+    color: #fef2e4;
+}
+.jul .holiday:hover {
+    background-color: #c60000;
+}
+.jul .day {
+    color: #fd974f;
+}
+.jul .date {
+    color: #805a3b;
+}
+
+/*  August  */
+
+.aug {
+    background-color: #c6d166;
+}
+.aug .cal-h-container {
+    background-color: #0f1b07;
+    color: #fff;
+}
+.aug a:link, .aug a:active, .aug a:visited {
+    color: #fff;
+}
+.aug a:hover {
+    background-color: #112914;
+}
+.aug .date:hover {
+    background-color: #0f1b07;
+    color: #fff;
+}
+.aug .holiday:hover {
+    background-color: #0f1b07;
+}
+.aug .day {
+    color: #0f1b07;
+}
+.aug .date {
+    color: #5c821a;
+}
+
+/*  September  */
+
+.sep {
+    background-color: #20948b;
+}
+.sep .cal-h-container {
+    background-color: #f4cc70;
+    color: #20948b;
+}
+.sep a:link, .sep a:active, .sep a:visited {
+    color: #20948b;
+}
+.sep a:hover {
+    background-color: #e8bb51;
+}
+.sep .date:hover {
+    background-color: #f4cc70;
+    color: #20948b;
+}
+.sep .holiday:hover {
+    background-color: #f4cc70;
+}
+.sep .day {
+    color: #de7a22;
+}
+.sep .date {
+    color: #20948b;
+}
+
+/*  October  */
+
+.oct {
+    background-color: #063852;
+}
+.oct .cal-h-container {
+    background-color: #e6df44;
+    color: #063852;
+}
+.oct a:link, .oct a:active, .oct a:visited {
+    color: #063852;
+}
+.oct a:hover {
+    background-color: #dbd337;
+}
+.oct .date:hover {
+    background-color: #e6df44;
+    color: #063852;
+}
+.oct .holiday:hover {
+    background-color: #e6df44;
+}
+.oct .day {
+    color: #f0810f;
+}
+.oct .date {
+    color: #011a27;
+}
+
+/*  November  */
+
+.nov {
+    background-color: #16253d;
+}
+.nov .cal-h-container {
+    background-color: #efb509;
+    color: #16253d;
+}
+.nov a:link, .nov a:active, .nov a:visited {
+    color: #16253d;
+}
+.nov a:hover {
+    background-color: #dba607;
+}
+.nov .date:hover {
+    background-color: #efb509;
+    color: #16253d;
+}
+.nov .holiday:hover {
+    background-color: #efb509;
+}
+.nov .day {
+    color: #cd7213;
+}
+.nov .date {
+    color: #002c5a;
+}
+
+/*  December  */
+
+.dec {
+    background-color: #336b87;
+}
+.dec .cal-h-container {
+    background-color: #90afc5;
+    color: #2a3132;
+}
+.dec a:link, .dec a:active, .dec a:visited {
+    color: #2a3132;
+}
+.dec a:hover {
+    background-color: #6b95b3;
+}
+.dec .date:hover {
+    background-color: #90afc5;
+    color: #2a3132;
+}
+.dec .holiday:hover {
+    background-color: #90afc5;
+}
+.dec .day {
+    color: #763626;
+}
+.dec .date {
+    color: #763626;
+}
